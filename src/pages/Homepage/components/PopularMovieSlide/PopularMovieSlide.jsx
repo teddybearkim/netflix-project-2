@@ -28,4 +28,4 @@ const PopularMovieSlide = () => {
   );
 };
 
-export default PopularMovieSlide;
+export default PopularMovieSlide

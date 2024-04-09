@@ -2,7 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import api from '../utils/api';
 
 const fetchPopularMovies = () => {
-  return api.get(`/movie/popular`);
+  return api.get('/movie/popular');
 };
 
 export const usePopularMoviesQuery = () => {
@@ -11,4 +11,4 @@ export const usePopularMoviesQuery = () => {
     queryFn: fetchPopularMovies,
     select: (results) => results.data,
   });
-};
+}

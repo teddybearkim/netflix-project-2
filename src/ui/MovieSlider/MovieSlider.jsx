@@ -30,4 +30,4 @@ const MovieSlider = ({ title, movies, responsive }) => {
   );
 };
 
-export default MovieSlider;
+export default MovieSlider
