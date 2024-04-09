@@ -12,10 +12,9 @@ const Banner = () => {
       return <div>{isLoadingSpinner()}</div>
     }
     if (isError) {
-      return <Alert variant="danger">{error.message}</Alert>; // JSX를 반환해야 합니다.
+      return <Alert variant="danger">{error.message}</Alert>;
     }
 
-    // data.results[0]가 정의되어 있는지 확인
     const posterPath = data?.results[randomNumber].backdrop_path;
     const imageUrl = `https://image.tmdb.org/t/p/original${posterPath}`
 
@@ -28,7 +27,7 @@ const Banner = () => {
             </div>
         </div>
       </>
-    );
+    )
 }
 
-export default Banner;
+export default Banner

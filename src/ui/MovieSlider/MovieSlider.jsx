@@ -25,7 +25,7 @@ const MovieSlider = ({ title, movies, responsive }) => {
           <MovieCard movie={movie} key={index} />
         ))}
       </Carousel>
-      ;
+      
     </div>
   );
 };
