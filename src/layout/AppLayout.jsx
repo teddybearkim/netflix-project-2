@@ -1,16 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
-import { Outlet } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import "./AppLayout.style.css";
 
 
 const AppLayout = () => {
+  const [keyword, setKeyword] = useState("");
+  const navigate = useNavigate();
+  const searchByKeyword = (event) => {
+    event.preventDefault();
+    //url 바꿔주기
+    navigate(`/movies?q=${keyword}`);
+  };
   return (
     <div style={{ background: "black", color: "white" }}>
       <Navbar expand="lg" className="bg-dark">
@@ -28,16 +33,22 @@ const AppLayout = () => {
               style={{ maxHeight: "100px" }}
               navbarScroll
             >
-              <Nav.Link href="/" className="nav-list">Home</Nav.Link>
-              <Nav.Link className="nav-list">Movies</Nav.Link>
-              <Nav.Link href="/tvs" className="nav-list">TVs</Nav.Link>
+              <Nav.Link href="/" className="nav-list">
+                Home
+              </Nav.Link>
+              <Nav.Link href="/movies" className="nav-list">Movies</Nav.Link>
+              <Nav.Link href="/tvs" className="nav-list">
+                TVs
+              </Nav.Link>
             </Nav>
-            <Form className="d-flex">
+            <Form className="d-flex" onSubmit={searchByKeyword}>
               <Form.Control
                 type="search"
                 placeholder="Search"
                 className="me-2"
                 aria-label="Search"
+                value={keyword}
+                onChange={(event) => setKeyword(event.target.value)}
               />
               <Button variant="outline-danger">Search</Button>
             </Form>

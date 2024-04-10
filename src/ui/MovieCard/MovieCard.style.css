@@ -66,11 +66,13 @@
       font-weight: bold;
       overflow-wrap: break-word;
       text-align: center;
+      border-radius: 20px;
       font-size: 0.8rem;
   }
   .overlay:hover{
     opacity: 1;
     padding:0px;
+    border-radius: 20px;
 
   }
 
@@ -78,5 +80,6 @@
     transform: scale(1.1) translate(0);
     z-index: 2;
     justify-content: left;
+    border-radius: 20px;
   }
 }

@@ -13,4 +13,4 @@ export const useSearchMovieQuery = ({ keyword, page }) => {
 		queryFn: () => fetchSearchMovie({ keyword, page }),
 		select: (result) => result.data,
 	});
-};
+};	
