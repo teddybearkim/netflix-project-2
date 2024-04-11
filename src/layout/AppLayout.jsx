@@ -13,7 +13,7 @@ const AppLayout = () => {
   const navigate = useNavigate();
   const searchByKeyword = (event) => {
     event.preventDefault();
-    //url 바꿔주기
+    
     navigate(`/movies?q=${keyword}`);
   };
   return (
@@ -37,9 +37,7 @@ const AppLayout = () => {
                 Home
               </Nav.Link>
               <Nav.Link href="/movies" className="nav-list">Movies</Nav.Link>
-              <Nav.Link href="/tvs" className="nav-list">
-                TVs
-              </Nav.Link>
+              
             </Nav>
             <Form className="d-flex" onSubmit={searchByKeyword}>
               <Form.Control
@@ -50,7 +48,7 @@ const AppLayout = () => {
                 value={keyword}
                 onChange={(event) => setKeyword(event.target.value)}
               />
-              <Button variant="outline-danger">Search</Button>
+              <Button variant="outline-danger" onClick={searchByKeyword}>Search</Button>
             </Form>
           </Navbar.Collapse>
         </Container>

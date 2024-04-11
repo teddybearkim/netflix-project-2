@@ -78,7 +78,7 @@
   text-align: center;
   padding: 1rem;
   margin: 0.5rem;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: bold;
 }
 .no-found-box {
@@ -94,6 +94,8 @@
   margin: 1rem 1rem 1rem 1rem;
   color: #e50914;
   border: 1px solid #e50914;
+  border-radius: 20px;
+  text-align: center;
 }
 
 .spinner-area {
@@ -110,20 +112,7 @@
 }
 
 @media (max-width: 768px) {
-  .movie-container {
-    padding: 10px;
-  }
-  .movie-card {
-    width: 68%;
-    padding: 50px;
-  }
   .overlay {
-    transform: scale(1.2) translateX(50px) translateY(-10px);
-    width: 150px;
-    height: 220px;
+    scale: 0.8;
   }
-  .overlay>h4 {
-    font-size: 10px;
-  }
-  
 }
